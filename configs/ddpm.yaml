@@ -1,0 +1,43 @@
+# configs/ddpm.yaml
+# ---------------------------------------------------------------------------
+# Hyperparameters of the conditional DDPM run reported in the paper
+# (experiment name "final_big_80"). These mirror the defaults baked into
+# scripts/train_ddpm.py and slurm/train_ddpm.sbatch; this file documents the
+# canonical configuration in one place for reference.
+# ---------------------------------------------------------------------------
+
+experiment: final_big_80
+device: cuda
+
+# Reproducibility (shared with the VAE/DAE/DRRN/LU-Net baselines)
+seed: 17                  # model / training seed
+seed_split: 29            # patient-grouped K-fold split seed
+n_splits: 4               # number of CV folds (the paper uses 4)
+
+# Signal
+signal_length: 370        # samples per beat (1 kHz)
+normalise: true           # min-max [0, 1]
+test_size: 0.2
+
+# Noise schedule
+noise_steps: 5000         # T (diffusion steps) -- the value used in all experiments.
+noise_schedule: quadratic
+beta_start: 0.0001
+beta_end: 0.05
+noise_batchwise: true
+
+# Denoising network (HNF backbone)
+model_small: false        # false -> 5 HNF blocks (large); true -> 3 blocks (small)
+feats: 80
+use_pretrained: false
+
+# Optimisation
+lr: 0.001
+num_epochs: 400
+batch_size: 96
+batch_size_test: 192
+step_size: 100            # StepLR
+gamma: 0.5
+
+# Logging
+n_prints: 5

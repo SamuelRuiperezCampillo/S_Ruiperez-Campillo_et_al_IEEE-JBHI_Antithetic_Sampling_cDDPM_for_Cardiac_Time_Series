@@ -1,0 +1,22 @@
+# configs/paths.local.yaml.example
+# ---------------------------------------------------------------------------
+# Copy this file to `configs/paths.local.yaml` (which is GIT-IGNORED) and set
+# your machine-specific locations. Values here OVERRIDE configs/paths.yaml, so
+# your personal cluster paths never get committed to the public repo.
+# Environment variables still take precedence over this file.
+#
+#   cp configs/paths.local.yaml.example configs/paths.local.yaml
+#   # then edit the two paths below
+# ---------------------------------------------------------------------------
+
+# Root holding the cohort (see docs/data_format.md). For example, on the
+# original cluster this was /cluster/work/vogtlab/Group/<user>/...:
+#   <data_root>/2019 1111 Final_codes_and_data/Step_1_RemoveUnderOverShoots/single_MAP_dict_BP_mean_3SD_cropped_20191111.npz
+#   <data_root>/2023 0228 APD_data_MAP_vent_SRC.xlsx
+data_root: /absolute/path/to/your/MAP_cohort_root
+
+# Where run outputs (checkpoints, metrics, denoised signals, figures) go:
+experiments_root: /absolute/path/to/your/experiments
+
+# Optional: CSV of held-out patient IDs (must have a 'pat_ID' column):
+# exclude_patients_file: /absolute/path/to/hidden_test_set_selected.csv

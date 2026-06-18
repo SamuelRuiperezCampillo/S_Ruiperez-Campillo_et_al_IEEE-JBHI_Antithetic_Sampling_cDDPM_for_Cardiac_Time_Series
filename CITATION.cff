@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the accompanying paper."
+title: "cardiac-map-diffusion: Antithetic Sampling Enhanced Probabilistic Diffusion for Denoising Cardiac Time Series"
+authors:
+  # TODO: replace with the full author list as it appears on the paper.
+  - family-names: "TODO"
+    given-names: "TODO"
+version: 0.1.0
+date-released: "2026-01-01"
+license: MIT
+preferred-citation:
+  type: conference-paper   # TODO: set to article/conference-paper as appropriate
+  title: "Antithetic Sampling Enhanced Probabilistic Diffusion for Denoising Cardiac Time Series"
+  authors:
+    - family-names: "TODO"
+      given-names: "TODO"
+  year: 2026
+  # TODO: add venue / DOI / pages once available.

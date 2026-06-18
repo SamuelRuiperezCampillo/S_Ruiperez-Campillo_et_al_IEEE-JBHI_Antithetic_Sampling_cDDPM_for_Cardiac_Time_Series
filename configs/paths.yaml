@@ -1,0 +1,25 @@
+# configs/paths.yaml
+# ---------------------------------------------------------------------------
+# Location of the (private, IRB-restricted) ventricular MAP cohort and of the
+# experiment-output tree. Environment variables OVERRIDE these values:
+#     CARDIACDIFF_DATA, CARDIACDIFF_EXPERIMENTS, CARDIACDIFF_EXCLUDE_PATIENTS
+#
+# For machine-specific paths you do NOT want committed, copy
+# configs/paths.local.yaml.example -> configs/paths.local.yaml (git-ignored);
+# its values override this file. Precedence: env var > paths.local.yaml > this file.
+#
+# The cohort is NOT distributed with this repository. See docs/data_format.md
+# for the expected directory layout and file names.
+# ---------------------------------------------------------------------------
+
+# Root directory that must contain:
+#   2019 1111 Final_codes_and_data/Step_1_RemoveUnderOverShoots/single_MAP_dict_BP_mean_3SD_cropped_20191111.npz
+#   2023 0228 APD_data_MAP_vent_SRC.xlsx
+data_root: null
+
+# Where run outputs (checkpoints, metrics, denoised signals, figures) are written.
+experiments_root: ./experiments
+
+# Optional CSV of patient IDs to hold out (the paper's "hidden test set").
+# Leave null to train on the full cohort.
+exclude_patients_file: null
