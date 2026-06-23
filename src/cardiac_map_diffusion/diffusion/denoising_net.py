@@ -1,6 +1,6 @@
 ''' Faithful migration of the original `denoising_net.py` (the DeScoD-ECG conditional denoiser). The network architecture -- He-initialised Conv1d layers, sinusoidal noise-level PositionalEncoding, FeatureWiseAffine conditioning, the HNFBlock dilated-convolution stack, and the two-stream ConditionalModel -- is reproduced verbatim; no imports required rewriting and no filesystem paths were present, so only this migration note was prepended to the existing module docstring.
 
-    - This is the denoising Network proposed by the authors of the paper DeScoD-ECG (DOI: 10.1109/JBHI.2023.3237712).
+    - This is the denoising network introduced in DeScoD-ECG (DOI: 10.1109/JBHI.2023.3237712).
 
     - The code is extensively commented by myself to understand the working of the network.
 

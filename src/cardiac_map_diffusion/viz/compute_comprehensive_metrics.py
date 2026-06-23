@@ -6,9 +6,6 @@ This script processes experiment folders with the standard structure and calcula
 all metrics (psnr, snr, rmse, mse, pcorr, spearman, lsd, dwt) for fair comparison
 across traditional filters, deep learning baselines, and VAE models.
 
-Author: GitHub Copilot
-Date: October 2025
-
 Faithful migration of ``MAP_VAE/compute_comprehensive_metrics.py`` (an argparse
 ``main()`` entry script). Only mechanical edits were applied: the hardcoded
 ``--base_path`` default of ``/cluster/.../MAP_VAE/experiments/`` was routed

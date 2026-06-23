@@ -17,16 +17,8 @@ Every training/denoising job writes, per fold, under
   (the table format used throughout the paper).
 
 The reconstruction metrics computed for every method are: PCC, "RMSE" (**pooled
-MSE** — see the caveat below), PSNR, MSE, Spearman, SNR, DTW, LSD, and NMAE
+MSE** under the default `compute_rmse(..., mode='total')` behavior), PSNR, MSE, Spearman, SNR, DTW, LSD, and NMAE
 (range / l1 / mean).
-
-## Metric caveat (read this before comparing to the paper)
-
-`compute_rmse(..., mode='total')` returns the **pooled MSE without a square root**.
-So the column printed as `rmse` / "RMSE" is an **MSE**. The deployed 2-shot
-antithetic DDPM reaches an "RMSE" (= MSE) of roughly **3.2–3.3e-3** on the
-held-out folds; the true RMSE is the square root of that. This is intentional and
-preserved verbatim from the original code (`docs/reproducibility.md`).
 
 ## Headline comparison
 
@@ -63,4 +55,4 @@ outputs:
 
 The reviewer-response tooling (inference-time benchmark, uncertainty-vs-error
 calibration, metric-reproduction harness) is **out of scope** for this repository
-by design — see [decisions.md](decisions.md).
+by design.

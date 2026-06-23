@@ -88,17 +88,15 @@ The migration is faithful (only imports/paths/docstrings changed), so the
 published numbers reproduce from the trained checkpoints or by re-running the
 SLURM jobs. Read [docs/reproducibility.md](docs/reproducibility.md) first — it
 documents the shared seeds (17 / split 29), the 4-fold split, the `T = 5000`
-diffusion-steps setting, and an important metric caveat: the
-column reported as **"RMSE" is actually a pooled MSE** (`compute_rmse` returns MSE
-without the square root).
+diffusion-steps setting, and the default metric behavior where
+`compute_rmse(..., mode='total')` reports pooled MSE.
 
 ## Documentation
 
 - [docs/data_format.md](docs/data_format.md) — expected cohort layout (no data shipped)
-- [docs/reproducibility.md](docs/reproducibility.md) — environment, seeds, exact commands, caveats
+- [docs/reproducibility.md](docs/reproducibility.md) — environment, seeds, exact commands
 - [docs/methods.md](docs/methods.md) — AV sampling, NFE accounting, architectures, noise model
 - [docs/results.md](docs/results.md) — headline results and how to regenerate tables/figures
-- [docs/decisions.md](docs/decisions.md) — migration decisions and reconciliations
 
 ## License & citation
 

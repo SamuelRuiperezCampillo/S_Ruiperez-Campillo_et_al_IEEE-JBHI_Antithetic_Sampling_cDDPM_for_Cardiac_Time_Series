@@ -1,6 +1,6 @@
 ''' Faithful migration of the original `denoising_net_small.py` (the smaller DeScoD-ECG variant with 3 instead of 5 HNF blocks per stream). The architecture and ConditionalModelSmall definition are reproduced verbatim; no imports required rewriting and no filesystem paths were present, so only this migration note was prepended to the existing module docstring.
 
-    - This is the denoising Network proposed by the authors of the paper DeScoD-ECG (DOI: 10.1109/JBHI.2023.3237712).
+    - This is the denoising network introduced in DeScoD-ECG (DOI: 10.1109/JBHI.2023.3237712).
 
     - The number of HNF blocks is reduced from 5 to 3 to have fewer parameters. 
 '''

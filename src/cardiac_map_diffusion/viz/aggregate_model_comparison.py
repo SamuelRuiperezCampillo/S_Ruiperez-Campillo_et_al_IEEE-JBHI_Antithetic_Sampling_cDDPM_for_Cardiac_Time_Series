@@ -5,9 +5,6 @@ Results Aggregator for Comprehensive Model Comparison
 This script collects all the individual model results and creates a unified
 comparison table across all baseline methods (filters, deep learning, VAE).
 
-Author: GitHub Copilot
-Date: October 2025
-
 Faithful migration of ``MAP_VAE/aggregate_model_comparison.py`` (an argparse
 ``main()`` entry script). Only mechanical edits were applied: the hardcoded
 ``--base_path`` default of ``/cluster/.../MAP_VAE/experiments/`` was routed

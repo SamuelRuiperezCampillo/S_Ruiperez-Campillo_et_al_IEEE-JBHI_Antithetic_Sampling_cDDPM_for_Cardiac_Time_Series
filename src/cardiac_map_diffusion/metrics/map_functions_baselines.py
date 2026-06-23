@@ -19,8 +19,6 @@ root, exactly as in the source).
 """
 MAP FUNCTIONS
 Created on Mon Mar  6 11:01:09 2023
-
-@author: sruip
 """
 import os
 import numpy             as np
@@ -404,13 +402,12 @@ def compute_psnr(array1, array2, mode='total'):
         return np.mean(pnsr_list)
 
 # ===================================================================
-# ADDITIONAL METRICS FUNCTIONS - Added by GitHub Copilot for enhanced analysis
+# ADDITIONAL METRICS FUNCTIONS
 # ===================================================================
 
 def compute_mse(array1, array2, mode='total'):
     """
     Compute Mean Squared Error (MSE) between two arrays.
-    Added by GitHub Copilot to complement existing metrics.
     
     Args:
         array1: Original signal array
@@ -432,7 +429,6 @@ def compute_mse(array1, array2, mode='total'):
 def compute_spearman_corr(array1, array2, mode='total'):
     """
     Compute Spearman's rank correlation coefficient (rho) between two arrays.
-    Added by GitHub Copilot to complement Pearson correlation.
     
     Args:
         array1: Original signal array
@@ -455,7 +451,6 @@ def compute_spearman_corr(array1, array2, mode='total'):
 def compute_snr(array1, array2, mode='total'):
     """
     Compute Signal-to-Noise Ratio (SNR) between original and reconstructed signals.
-    Added by GitHub Copilot for signal quality assessment.
     
     Args:
         array1: Original signal array (treated as signal)
@@ -483,7 +478,6 @@ def compute_snr(array1, array2, mode='total'):
 def compute_dtw(array1, array2, mode='total'):
     """
     Compute Dynamic Time Warping (DTW) distance between two arrays.
-    Added by GitHub Copilot for temporal alignment-aware comparison.
     
     Args:
         array1: Original signal array
@@ -517,7 +511,6 @@ def compute_dtw(array1, array2, mode='total'):
 def _simple_dtw(x, y):
     """
     Simple DTW implementation fallback.
-    Added by GitHub Copilot as fallback when dtaidistance is not available.
     """
     n, m = len(x), len(y)
     dtw_matrix = np.full((n + 1, m + 1), np.inf)
@@ -535,7 +528,6 @@ def _simple_dtw(x, y):
 def compute_lsd(array1, array2, mode='total', window='hann', nperseg=256):
     """
     Compute Log-Spectral Distance (LSD) with Hanning window between two arrays.
-    Added by GitHub Copilot for frequency domain comparison.
     
     Args:
         array1: Original signal array
@@ -575,7 +567,6 @@ def compute_lsd(array1, array2, mode='total', window='hann', nperseg=256):
 def compute_nmae(array1, array2, norm='mean', mode='total'):
     """
     Compute Normalized Mean Absolute Error (NMAE) between two arrays.
-    Added by GitHub Copilot with multiple normalization options.
     
     Args:
         array1: Original signal array

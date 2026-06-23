@@ -65,10 +65,10 @@ APD30/60/90 prediction from denoised beats with an SVR
 `scripts/downstream_apd.py`), quantifying whether denoising preserves clinically
 relevant repolarisation timing.
 
-## Two faithful pipelines
+## Pipelines
 
 The diffusion and baseline pipelines were developed with separate but
 split-compatible data loaders and metric modules. They are preserved side by side
-rather than merged (to avoid numeric drift); see [decisions.md](decisions.md).
+rather than merged (to avoid numeric drift).
 Both read the **same** cohort files through `cardiac_map_diffusion.paths`, which
 guarantees identical patient-grouped folds at `seed_split=29`.

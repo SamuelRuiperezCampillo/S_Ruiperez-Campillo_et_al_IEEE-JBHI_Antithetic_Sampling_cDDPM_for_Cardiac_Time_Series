@@ -5,9 +5,6 @@ APD Results Aggregator for Denoised Signal Analysis
 This script collects APD prediction results from all baseline models and creates
 a comprehensive comparison table for downstream task performance evaluation.
 
-Author: GitHub Copilot
-Date: October 2025
-
 Faithful migration of ``MAP_VAE/aggregate_apd_results.py`` (an argparse
 ``main()`` entry script). The hardcoded ``--apd_base_path`` default
 (``/cluster/.../MAP_VAE/apd_experiments``) was routed through

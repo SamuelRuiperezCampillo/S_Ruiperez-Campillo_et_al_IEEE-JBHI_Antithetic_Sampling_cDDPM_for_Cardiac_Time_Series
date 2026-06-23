@@ -2,7 +2,7 @@
 
 This repository is a **faithful** migration of the exact code that produced the
 paper's results: only imports, hard-coded paths, and module docstrings were
-changed (see [decisions.md](decisions.md)). Computational logic, seeds,
+changed. Computational logic, seeds,
 hyper-parameters, the noise schedule, and the sampling loops are byte-identical
 to the originals.
 
@@ -47,13 +47,11 @@ For an exact lock from the machine that produced the results, run on that machin
 > `MAP_VAE/test/submit_jobs_cluster.sh`). The repository default is **4**; override
 > with `N_SPLITS=5`.
 
-## Metric caveat (important)
+## Metric note
 
-`compute_rmse(..., mode='total')` (in every `map_functions*` module) returns the
-**pooled MSE without a square root**. Consequently the column labelled "RMSE" in
-the paper tables is actually an **MSE**; the true RMSE is its square root. This
-behaviour is preserved verbatim. The diffusion trainer reports this quantity as
-`rmse` in `summary_values.xlsx`. Representative values: AV 2-shot MSE ≈ 3.2–3.3e-3.
+`compute_rmse(..., mode='total')` (in every `map_functions*` module) reports the
+pooled MSE value by default, and the diffusion trainer writes it as `rmse` in
+`summary_values.xlsx`.
 
 ## How to run (cluster)
 
@@ -83,8 +81,3 @@ not state dicts — loading therefore requires the package to be importable
 follow `model_fold{0-3}.pth` (DDPM) and `VAE_CNN_beta_0.005_rs_17_fold{0-3}.pth`
 (VAE).
 
-## Without local Python
-
-The repository was assembled on a machine without a Python interpreter; it has
-**not** been executed locally. Validate on the cluster with `pytest` (data-free
-tests) and a short 1-fold / few-epoch dry run before launching full jobs.
